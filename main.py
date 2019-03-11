@@ -4,9 +4,11 @@ clients = 'Mario, Alberto, '
 def create_client(client_name):
     global clients
 
-    clients += client_name
-    _add_coma()
-
+    if client_name not in clients:
+        clients += client_name
+        _add_coma()
+    else:
+        print('Client already in the client\'s list')
 
 def list_clients():
     global clients
