@@ -20,9 +20,24 @@ def _add_coma():
     clients += ', '
 
 
+def _print_welcome():
+    print('WELCOME TO SALES')
+    print('*' * 50)
+    print('What would you like to do today? ')
+    print('[C]reate clients')
+    print('[D]elete clients')
+
+
 if __name__ == '__main__':
-    list_clients()
+    _print_welcome()
 
-    create_client('Prueba')
+    command = input()
 
-    list_clients()
+    if command == 'C':
+        client_name = input('What is the client name? ')
+        create_client(client_name)
+        list_clients()
+    elif command == 'D':
+        pass
+    else:
+        print('Invalid Command')
