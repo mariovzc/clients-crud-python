@@ -2,6 +2,7 @@
 clients = 'Mario, Alberto, '
 
 def create_client(client_name):
+    """ Create clients function """
     global clients
 
     if client_name not in clients:
@@ -12,12 +13,14 @@ def create_client(client_name):
 
 
 def list_clients():
+    """ List clients function """
     global clients
 
     print(clients)
 
 
 def update_client(client_name, updated_client_name):
+    """ Update the client name """
     global clients
 
     if client_name in clients:
@@ -26,6 +29,7 @@ def update_client(client_name, updated_client_name):
         _not_found()
 
 def delete_client(client_name):
+    """ Delete the client of the list """
     global clients
 
     if client_name in clients:
@@ -34,15 +38,18 @@ def delete_client(client_name):
         _not_found()
 
 def _add_coma():
+    """ Add Coma to the client list """
     global clients
 
     clients += ', '
 
 def _not_found():
+    """ Print Not found message """
     print('Client is not in clients list')
 
 
 def _print_welcome():
+    """ Display Welcome Message """
     print('WELCOME TO SALES')
     print('*' * 50)
     print('What would you like to do today? ')
@@ -51,6 +58,7 @@ def _print_welcome():
     print('[D]elete client')
 
 def _get_client_name():
+    """ Obtain the client name """
     return input('What is the client name? ')
 
 if __name__ == '__main__':
