@@ -42,7 +42,7 @@ def search_client(client_name):
         if client != client_name:
             continue
         else:
-            return true
+            return True
 
 def _not_found():
     """ Print Not found message """
@@ -55,8 +55,10 @@ def _print_welcome():
     print('*' * 50)
     print('What would you like to do today? ')
     print('[C]reate client')
+    print('[L]ist client')
     print('[U]pdate client')
     print('[D]elete client')
+    print('[S]earch client')
 
 def _get_client_name():
     """ Obtain the client name """
@@ -85,6 +87,9 @@ if __name__ == '__main__':
         create_client(client_name)
         list_clients()
 
+    if command == 'L':
+        list_clients()
+
     elif command == 'D':
         client_name = _get_client_name()
         delete_client(client_name)
@@ -93,8 +98,12 @@ if __name__ == '__main__':
     elif command == 'U':
         client_name = _get_client_name()
         updated_client_name = input('What is the updated client name? ')
-        update_client(client_name + ',', updated_client_name + ',')
+        update_client(client_name , updated_client_name)
         list_clients()
+
+    elif command == 'S':
+        client_name = _get_client_name()
+        search_client(client_name)
 
     else:
         print('Invalid Command')
